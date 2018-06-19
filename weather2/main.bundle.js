@@ -76,7 +76,7 @@ var CitiesService = (function () {
     return CitiesService;
     var _a, _b;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/cities.service.js.map
+//# sourceMappingURL=D:/ang2-weather/src/cities.service.js.map
 
 /***/ }),
 
@@ -155,7 +155,7 @@ var NormalizeService = (function () {
     ], NormalizeService);
     return NormalizeService;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/normalize.service.js.map
+//# sourceMappingURL=D:/ang2-weather/src/normalize.service.js.map
 
 /***/ }),
 
@@ -187,7 +187,7 @@ var items = [{
 var url = 'https://api.darksky.net/forecast/';
 var token = '216003fd9aebe5231a3b062fb1949d8a/';
 var callback = '?units=ca&format=jsonp&callback=JSONP_CALLBACK';
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/constants.js.map
+//# sourceMappingURL=D:/ang2-weather/src/constants.js.map
 
 /***/ }),
 
@@ -222,7 +222,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/main.js.map
+//# sourceMappingURL=D:/ang2-weather/src/main.js.map
 
 /***/ }),
 
@@ -255,7 +255,7 @@ var AboutPageComponent = (function () {
     ], AboutPageComponent);
     return AboutPageComponent;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/about-page.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/about-page.component.js.map
 
 /***/ }),
 
@@ -289,7 +289,7 @@ var AppComponent = (function () {
     ], AppComponent);
     return AppComponent;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/app.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/app.component.js.map
 
 /***/ }),
 
@@ -373,7 +373,7 @@ var AppModule = (function () {
     ], AppModule);
     return AppModule;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/app.module.js.map
+//# sourceMappingURL=D:/ang2-weather/src/app.module.js.map
 
 /***/ }),
 
@@ -447,7 +447,7 @@ var ChartHTMLComponent = (function () {
     ], ChartHTMLComponent);
     return ChartHTMLComponent;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/chartHTML.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/chartHTML.component.js.map
 
 /***/ }),
 
@@ -532,7 +532,7 @@ var WeatherDetailInfoComponent = (function () {
     return WeatherDetailInfoComponent;
     var _a, _b, _c, _d;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/detail-info.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/detail-info.component.js.map
 
 /***/ }),
 
@@ -587,7 +587,7 @@ var WeekComponent = (function () {
     return WeekComponent;
     var _a;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/week.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/week.component.js.map
 
 /***/ }),
 
@@ -620,7 +620,7 @@ var DeveloperInfoComponent = (function () {
     ], DeveloperInfoComponent);
     return DeveloperInfoComponent;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/developer-info.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/developer-info.component.js.map
 
 /***/ }),
 
@@ -653,7 +653,7 @@ var OopsComponent = (function () {
     ], OopsComponent);
     return OopsComponent;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/oops.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/oops.component.js.map
 
 /***/ }),
 
@@ -705,7 +705,7 @@ var WeatherItemComponent = (function () {
     return WeatherItemComponent;
     var _a;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/weather-item.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/weather-item.component.js.map
 
 /***/ }),
 
@@ -749,7 +749,7 @@ var WeatherListComponent = (function () {
     return WeatherListComponent;
     var _a, _b;
 }());
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/weather-list.component.js.map
+//# sourceMappingURL=D:/ang2-weather/src/weather-list.component.js.map
 
 /***/ }),
 
@@ -765,7 +765,7 @@ var WeatherListComponent = (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=D:/bilysha.github.io/weather2/src/environment.js.map
+//# sourceMappingURL=D:/ang2-weather/src/environment.js.map
 
 /***/ }),
 
