@@ -12,9 +12,9 @@ body {
 
 header,
 footer {
-  height: 100px;
+  height: 60px;
   background-color: #282121;
-  line-height: 100px;
+  line-height: 60px;
 }
 
 footer {
@@ -26,7 +26,7 @@ footer {
 
 header p,
 footer p {
-  font-size: 40px;
+  font-size: 30px;
   margin: 0 20px;
   font-weight: bold;
   color: #F6F4F4;
@@ -48,12 +48,10 @@ footer p {
 .center {
   margin: 0 auto;
   max-width: 1200px;
-  min-width: 700px;
   padding: 0 20px;
 }
 
 .city-container {
-  position: relative;
   padding: 20px;
   color: #696969;
   background-color: #FFFFFF;
@@ -61,8 +59,8 @@ footer p {
   margin: 20px auto;
   transition: all ease 0.5s;
   height: 200px;
-  width: 50%;
   min-width: 500px;
+  width: max-content;
 }
 
 .timezone-information {
@@ -81,6 +79,11 @@ footer p {
 .current-weather {
   display: flex;
   color: #696969;
+}
+
+.city {
+  margin: 0 auto;
+  width: max-content;
 }
 
 .temperature {
@@ -143,6 +146,7 @@ h2 {
 .week {
   display: flex;
   justify-content: space-between;
+  overflow: auto;
 }
 
 .week-summary {
@@ -152,7 +156,7 @@ h2 {
 
 .day {
   margin: 10px;
-  width: 80px;
+  flex-grow: 1;
   cursor: pointer;
   padding: 5px;
   position: relative;
@@ -165,7 +169,8 @@ h2 {
 
 .day img {
   display: block;
-  width: 50px;
+  width: 80%;
+  min-width: 40px;
   margin: 0 auto;
 }
 

@@ -691,7 +691,7 @@ button:active, button:focus {
     position: absolute;
     top: 33%;
     right: 10%;
-    
+
 }
 .item_container figure img {
     height: 100%;
@@ -1046,7 +1046,7 @@ footer {
 }
 
 
-@media all and (min-width: 770px) and (max-width: 950px) {
+@media (max-width: 950px) {
     .slider_inscription_top {
         font-size: 28px;
     }
@@ -1063,7 +1063,7 @@ footer {
         padding: 0;
     }
 }
-@media all and (min-width: 641px) and (max-width: 769px) {
+@media (max-width: 769px) {
     .mark_line {
         width: 97%;
     }
@@ -1132,7 +1132,7 @@ footer {
         margin-top: 50px;
     }
     .information {
-    
+
     width: 40%;
     }
     .photo_gallery_container .item_container:first-child,
@@ -1202,7 +1202,7 @@ footer {
 }
 
 
-@media all and (max-width: 640px) {
+@media (max-width: 640px) {
     .mark_line {
         width: 100%;
     }
@@ -1378,7 +1378,7 @@ footer {
         font-size: 20px;
         color: #ffffff;
         border: none;
-    
+
     }
     .photo_gallery_container .item_container:nth-child(7),
     .photo_gallery_container .item_container:nth-child(8) {

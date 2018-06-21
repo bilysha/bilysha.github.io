@@ -6,10 +6,10 @@ webpackJsonp([2,4],{
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(633);
+var content = __webpack_require__(634);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(684)(content, {});
+var update = __webpack_require__(687)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -27,22 +27,22 @@ if(false) {
 
 /***/ }),
 
-/***/ 633:
+/***/ 634:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(634)();
+exports = module.exports = __webpack_require__(635)();
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.wrapper {\n  position: relative;\n  min-height: 100%;\n}\n\n.content {\n  padding-bottom: 80px;\n}\n\n.center {\n  max-width: 1200px;\n  min-width: 500px;\n  margin: 0 auto;\n}\n\n@font-face {\n  font-family: 'Ubuntu';\n  src: url(" + __webpack_require__(685) + ") format('woff2');\n}\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\na {\n\ttext-decoration: none;\n\tcolor: #ffffff;\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n  background-color: #e2e2e2;\n}\n\n/* chartHtml bars styles*/\n\n.bar {\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  font-size: 14px;\n  height: 100px;\n  margin-right: 1px;\n  cursor: pointer;\n  background: linear-gradient(to top, #e2e2e2, #f1f0f0);\n  border-top: 2px solid #c7c7c7;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  padding: 5px 5px 10px 10px;\n}\n\n.bar img {\n  width: 50%;\n  margin-bottom: 20px;\n}\n\n.bar p {\n  font-size: 14px;\n  color: #000;\n}\n\n.bar p.temperature {\n  text-align: right;\n  font-weight: bold;\n}\n\n.bar:hover {\n  background: linear-gradient(to top, #e2e2e2, #fff);\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n.wrapper {\n  position: relative;\n  min-height: 100%;\n}\n\n.main-content {\n  padding-bottom: 80px;\n}\n\n.center {\n  max-width: 1200px;\n  min-width: 720px;\n  margin: 0 auto;\n}\n\n@font-face {\n  font-family: 'Ubuntu';\n  src: url(" + __webpack_require__(688) + ") format('woff2');\n}\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed,\nfigure, figcaption, footer, header, hgroup,\nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure,\nfooter, header, hgroup, menu, nav, section {\n\tdisplay: block;\n}\nbody {\n\tline-height: 1;\n}\nol, ul {\n\tlist-style: none;\n}\nblockquote, q {\n\tquotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n\tcontent: '';\n\tcontent: none;\n}\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\na {\n  text-decoration: none;\n  color: #e2e2e2;\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n  background-color: #dddddd;\n}\n\n/* chartHtml bars styles*/\n\n.bar {\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  font-size: 14px;\n  margin-right: 1px;\n  cursor: pointer;\n  background: linear-gradient(to top, #e2e2e2, #f1f0f0);\n  border-top: 2px solid #c7c7c7;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-pack: justify;\n      justify-content: space-between;\n  padding: 5px 5px 10px 10px;\n}\n\n.bar img {\n  width: 50%;\n  margin-bottom: 20px;\n}\n\n.bar p {\n  font-size: 14px;\n  color: #000;\n}\n\n.bar p.temperature {\n  text-align: right;\n  font-weight: bold;\n}\n\n.bar:hover {\n  background: linear-gradient(to top, #e2e2e2, #fff);\n}\n\n@media (max-width: 761px) {\n  .center {\n    max-width: 760px;\n    min-width: 540px;\n  }\n\n}\n\n@media (max-width: 561px) {\n\n  .center {\n    max-width: 560px;\n    min-width: 240px;\n  }\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 634:
+/***/ 635:
 /***/ (function(module, exports) {
 
 /*
@@ -99,7 +99,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 684:
+/***/ 687:
 /***/ (function(module, exports) {
 
 /*
@@ -352,14 +352,14 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 685:
+/***/ 688:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "Ubuntu-Regular.woff2";
 
 /***/ }),
 
-/***/ 689:
+/***/ 692:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(362);
@@ -367,5 +367,5 @@ module.exports = __webpack_require__(362);
 
 /***/ })
 
-},[689]);
+},[692]);
 //# sourceMappingURL=styles.bundle.map

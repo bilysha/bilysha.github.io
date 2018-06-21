@@ -41,16 +41,17 @@ aside article.user-container {
   padding: 20px;
 }
 
-aside article.user-container div.image-container {
-  margin: 0 auto;
-  width: max-content;
+aside article.user-container figure{
+  width: 100%;
 }
 
-aside article.user-container div.image-container img {
+aside article.user-container figure img {
+  display: block;
+  margin: 0 auto;
   border-radius: 50%;
 }
 
-aside p.user-fio, aside p.user-position {
+aside figcaption{
   text-align: center;
   margin: 10px 0;
   color: #39C2D7;
@@ -58,7 +59,8 @@ aside p.user-fio, aside p.user-position {
   font-size: 18px;
 }
 
-aside p.user-position {
+aside figcaption span{
+  display: block;
   font-size: 14px;
   color: #A3C644;
 }
