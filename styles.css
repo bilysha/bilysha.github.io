@@ -37,13 +37,16 @@ aside {
   top: 0;
 }
 
-aside article:first-child {
+aside article.user-container {
   padding: 20px;
 }
 
-aside img {
-  display: block;
+aside article.user-container div.image-container {
   margin: 0 auto;
+  width: max-content;
+}
+
+aside article.user-container div.image-container img {
   border-radius: 50%;
 }
 
@@ -102,14 +105,18 @@ main {
 }
 
 main section {
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   border: 2px solid #ebebf0;
   margin: 20px;
   margin-bottom: 40px;
   position: relative;
 }
 
-main section p:first-child {
+main section:last-child {
+  margin-bottom: 20px;
+}
+
+main section p.section-header {
   padding: 10px;
   background-color: #fff;
   border: 2px solid #ebebf0;
@@ -126,4 +133,25 @@ main a {
   background-color: #ebebf0;
   color: #000;
   margin: 20px 0;
+}
+
+main a:hover {
+  background-color: #A3C644;
+}
+
+@media (max-width: 761px) {
+  .content {
+    flex-direction: column;
+  }
+
+  aside {
+    margin: 0;
+    flex-grow: 0;
+    position: static;
+  }
+
+  main {
+    flex-grow: 0;
+    margin-top: 20px;
+  }
 }
