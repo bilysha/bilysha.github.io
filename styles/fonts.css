@@ -1,27 +1,6 @@
 @font-face {
-  font-family: 'Anton';
-  src: url(./../assets/fonts/Anton-Regular.ttf) format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Bree';
-  src: url(./../assets/fonts/BreeSerif-Regular.ttf) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PatuaOne';
-  src: url(./../assets/fonts/PatuaOne-Regular.ttf) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Archivo';
-  src: url(./../assets/fonts/ArchivoBlack-Regular.ttf) format('truetype');
+  font-family: 'acme';
+  src: url('./../assets/fonts/Acme-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }

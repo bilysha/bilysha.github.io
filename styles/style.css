@@ -1,5 +1,6 @@
 body {
-  background-color: #ebebf0;
+  background-color: #eee;
+  font-family: 'acme', sans-serif;
 }
 
 .center {
@@ -9,16 +10,16 @@ body {
 
 header {
   padding: 20px;
-  background-color: #464547;
+  background-color: #4d4d4d;
 }
 
 header p {
-  color: #fff;
+  color: #c2d7ea;
   font-size: 24px;
-  font-family: 'Anton', serif;
 }
 
 .content {
+  padding: 0 20px;
   margin-top: 20px;
   display: flex;
 }
@@ -27,6 +28,7 @@ aside, main {
   background-color: #fff;
   box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
   border-collapse: collapse;
+  border-radius: 5px;
 }
 
 aside {
@@ -54,15 +56,15 @@ aside article.user-container figure img {
 aside figcaption{
   text-align: center;
   margin: 10px 0;
-  color: #39C2D7;
-  font-family: 'Archivo', serif;
+  color: #a6d194;
   font-size: 18px;
 }
 
 aside figcaption span{
   display: block;
   font-size: 14px;
-  color: #A3C644;
+  color: #8db5d8;
+  margin-top: 10px;
 }
 
 aside article.contacts-container {
@@ -73,16 +75,18 @@ aside article.contacts-container {
 aside article.contacts-container p {
   padding: 0 20px;
   margin-bottom: 10px;
-  font-family: 'PatuaOne', serif;
 }
 
 aside article.contacts-container ul {
-  font-family: 'Bree', serif;
+  padding: 0 20px;
 }
 
 aside article.contacts-container ul li {
-  padding: 10px 0 10px 40px;
+  padding: 10px 0 10px 20px;
   cursor: pointer;
+  margin: 10px 0;
+  background-color: #eee;
+  border-radius: 5px;
 }
 
 aside article.contacts-container ul li a {
@@ -97,18 +101,22 @@ aside article.contacts-container ul li i {
 }
 
 aside article.contacts-container ul li:hover {
-  background-color: #A3C644;
+  background-color: #8db5d8;
+}
+
+aside article.contacts-container ul li:hover a {
+  color: #fff;
 }
 
 main {
   flex-grow: 15;
   padding: 20px;
-  font-family: 'Bree', serif;
 }
 
 main section {
   padding: 20px 20px 0 20px;
   border: 2px solid #ebebf0;
+  border-radius: 5px;
   margin: 20px;
   margin-bottom: 40px;
   position: relative;
@@ -122,8 +130,8 @@ main section p.section-header {
   padding: 10px;
   background-color: #fff;
   border: 2px solid #ebebf0;
-  font-family: 'PatuaOne', serif;
-  color: #39C2D7;
+  border-radius: 5px;
+  color: #a6d194;
   position: absolute;
   top: 0;
   transform: translate(0, -50%);
@@ -132,13 +140,15 @@ main section p.section-header {
 main a {
   display: block;
   padding: 20px;
-  background-color: #ebebf0;
+  background-color: #eee;
+  border-radius: 5px;
   color: #000;
   margin: 20px 0;
 }
 
 main a:hover {
-  background-color: #A3C644;
+  color: #fff;
+  background-color: #a6d194;
 }
 
 @media (max-width: 761px) {
