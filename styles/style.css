@@ -1,0 +1,169 @@
+body {
+  background-color: #eee;
+  font-family: 'acme', sans-serif;
+}
+
+.center {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 20px;
+  background-color: #4d4d4d;
+}
+
+header p {
+  color: #c2d7ea;
+  font-size: 24px;
+}
+
+.content {
+  padding: 0 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+aside, main {
+  background-color: #fff;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+aside {
+  flex-grow: 1;
+  margin-right: 20px;
+  height: max-content;
+  position: sticky;
+  top: 0;
+}
+
+aside article.user-container {
+  padding: 20px;
+}
+
+aside article.user-container figure{
+  width: 100%;
+}
+
+aside article.user-container figure img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+aside figcaption{
+  text-align: center;
+  margin: 10px 0;
+  color: #a6d194;
+  font-size: 18px;
+}
+
+aside figcaption span{
+  display: block;
+  font-size: 14px;
+  color: #8db5d8;
+  margin-top: 10px;
+}
+
+aside article.contacts-container {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+aside article.contacts-container p {
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+aside article.contacts-container ul {
+  padding: 0 20px;
+}
+
+aside article.contacts-container ul li {
+  padding: 10px 0 10px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+aside article.contacts-container ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #000;
+}
+
+aside article.contacts-container ul li i {
+  margin-right: 10px;
+}
+
+aside article.contacts-container ul li:hover {
+  background-color: #8db5d8;
+}
+
+aside article.contacts-container ul li:hover a {
+  color: #fff;
+}
+
+main {
+  flex-grow: 15;
+  padding: 20px;
+}
+
+main section {
+  padding: 20px 20px 0 20px;
+  border: 2px solid #ebebf0;
+  border-radius: 5px;
+  margin: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+main section:last-child {
+  margin-bottom: 20px;
+}
+
+main section p.section-header {
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #ebebf0;
+  border-radius: 5px;
+  color: #a6d194;
+  position: absolute;
+  top: 0;
+  transform: translate(0, -50%);
+}
+
+main a {
+  display: block;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 5px;
+  color: #000;
+  margin: 20px 0;
+}
+
+main a:hover {
+  color: #fff;
+  background-color: #a6d194;
+}
+
+@media (max-width: 761px) {
+  .content {
+    flex-direction: column;
+  }
+
+  aside {
+    margin: 0;
+    flex-grow: 0;
+    position: static;
+  }
+
+  main {
+    flex-grow: 0;
+    margin-top: 20px;
+  }
+}
