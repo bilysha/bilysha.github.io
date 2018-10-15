@@ -1,0 +1,378 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Ubuntu';
+    background-color: #c7c7c7;
+}
+
+.wrapper{
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+ }
+
+.container {
+    position:  relative;
+    min-height: 100%;
+}
+
+.main-content {
+    padding-bottom: 100px;
+}
+
+header, footer {
+    line-height: 100px;
+    height: 100px;
+    background-color: #383838;
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 10px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/*GameOptions styles*/
+
+.options{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background-color: #383838;
+    margin: 50px 0;
+}
+
+.options .legend {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/*difficulty column*/
+
+.difficulty label {
+    display: block;
+    text-align: left;
+    padding-left: 40px;
+    margin: 20px 0;
+    height: 30px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.difficulty label:hover{
+    color: #c7c7c7
+}
+
+input[name="difficult"]:checked {
+    color:#fff;
+}
+
+input[name="difficult"] + span {
+    position: absolute;
+    left: 70px;
+    width: 10px;
+    height: 10px;
+    display: block;
+    cursor: pointer;
+    background-color: #8d8d8d;
+    border-radius: 10px;
+}
+
+input[name="difficult"]:checked + span {
+    background-color: #fff;
+}
+
+input[value="10"] + span {
+    top: 65px;
+}
+input[value="20"] + span {
+    top: 115px;
+}
+input[value="36"] + span {
+    top: 165px;
+}
+
+/*cards scirts column*/
+
+input[name="cardSkirts"] + span, input[name="cardFronts"] + span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 5px solid white;
+    border-radius: 10px;
+    background: url(../images/new.png);
+    opacity: 0.5;
+}
+
+input[type="radio"] {
+    opacity: 0;
+}
+
+input[value="1"] + span {
+    background-position: 0px 0px;
+}
+
+input[value="2"] + span {
+    background-position: -100px 0px;
+}
+
+input[value="3"] + span {
+    background-position: -199px 0px;
+}
+
+input[value="4"] + span {
+    background-position: -100px -140px;
+}
+
+input[value="5"] + span {
+    background-position: -100px -300px;
+
+}
+
+input[value="6"] + span {
+    background-position: -1500px -500px;
+}
+
+input[type="radio"]:checked + span, input[type="radio"]:hover + span {
+    opacity: 1;
+}
+
+.cardsChecker {
+    width: 90px;
+    height: 135px;
+    display: inline-block;
+    position: relative;
+    margin: 15px;
+}
+
+/*end Gameoptions styles*/
+
+/*start button styles*/
+
+.ready {
+    display: flex;
+    justify-content: space-between;
+    background-color: #383838;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+.ready p {
+    font-size: 40px;
+    color: #fff;
+}
+button {
+    background-color: #c7c7c7;
+    color: #383838;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: #383838;
+}
+
+/*end start buttn*/
+
+.game {
+    margin-top: 50px;
+    position: relative;
+}
+
+/*mainScreen*/
+.mainScreen {
+    height: 750px;
+    background-color: #383838;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.helloPlayer {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+}
+
+.legend{
+    margin: 20px 0;
+    color: #fff;
+    letter-spacing: 5px;
+    font-size: 30px;
+}
+
+.gameRules p, .someInformation{
+    margin-top: 10px;
+    line-height: 30px;
+    word-spacing: 5px;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 25px;
+    color: #c7c7c7;
+}
+
+figure img {
+    width: 150px;
+    height: 150px;
+}
+
+figcaption {
+    text-align: right;
+    margin-right: 10px;
+    font-style: italic;
+    font-size: 15px;
+}
+
+/*end mainScreen*/
+
+/*playField*/
+
+.playField{
+    padding-top: 50px;
+    background-color: #383838;
+    height: 750px;
+    width: 1200px;
+}
+
+.countMoves, .timerZone {
+    font-size: 30px;
+    color: #fff;
+}
+
+.countMoves {
+    float: left;
+    margin-left: 20px;
+}
+
+.timerZone {
+    float: right;
+    margin-right: 20px;
+}
+
+.board {
+    position: relative;
+    margin: 30px auto;
+    width: 1150px;
+    height: 650px;
+    background-color: #c7c7c7;
+}
+
+.card {
+    display: inline-block;
+    width: 80px;
+    height: 125px;
+    margin: 10px;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.back, .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.backHide {
+    visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.back:hover, .front:hover {
+    cursor: pointer;
+}
+
+.easy{
+    padding: 170px 320px 0 320px;
+}
+
+.medium {
+    padding: 20px 270px 0 270px;
+}
+
+.hard{
+    padding: 20px 100px 0 100px;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+/*end playField*/
+
+/*gameOver*/
+
+.winner {
+    position: absolute;
+    text-align: center;
+    top: 300px;
+    left: 0;
+    background-color: #383838;
+    width: 1200px;
+    height: 200px;
+    padding: 0 50px;
+    z-index: 10;
+}
+
+.winner p {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-top: 20px;
+}
+
+.winner button {
+    margin: 20px 0;
+}
+
+.match {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+/*end gameOver*/
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.show{
+    display: block;
+}
+
+.hide {
+    display: none;
+}

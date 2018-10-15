@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Belloscript';
+    src: url('../fonts/bello-script.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-cn';
+    src: url('../fonts/helveticaneueltstd-cn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-blkcn';
+    src: url('../fonts/helveticaneueltstd-blkcn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-ltit';
+    src: url('../fonts/helveticaneueltstd-ltit.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-bdcn';
+    src: url('../fonts/helveticaneueltstd-bdcn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-thcn';
+    src: url('../fonts/helveticaneueltstd-thcn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-lt';
+    src: url('../fonts/helveticaneueltstd-lt.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-ltcn';
+    src: url('../fonts/helveticaneueltstd-ltcn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-ultlt';
+    src: url('../fonts/helveticaneueltstd-ultltcn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-HvCn';
+    src: url('../fonts/helveticaneueltstd-hvcn.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica-Thin';
+    src: url('../fonts/helveticaneueltstd-th.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/helvetica.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'AEmpirial';
+    src: url('../fonts/aempirial.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'LuxuryRoyale';
+    src: url(../fonts/luxuryroyalejf.woff2) format('woff2');
+}
