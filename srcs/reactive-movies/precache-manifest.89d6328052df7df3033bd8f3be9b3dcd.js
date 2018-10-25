@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/Poppins-Regular.731a28a4.ttf"
   },
   {
-    "revision": "bee1fc774cfb1c6d378b",
-    "url": "/static/css/main.78c62674.chunk.css"
+    "revision": "45ad6473cf0ba09e41cf",
+    "url": "/static/css/main.23cd2644.chunk.css"
   },
   {
     "revision": "0d44ccc05bdaf8819738",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/static/media/no_backdrop_image_avaliable.6d654fba.jpg"
   },
   {
-    "revision": "bee1fc774cfb1c6d378b",
-    "url": "/static/js/main.bee1fc77.chunk.js"
+    "revision": "45ad6473cf0ba09e41cf",
+    "url": "/static/js/main.45ad6473.chunk.js"
   },
   {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/static/media/fontawesome-webfont.acf3dcb7.svg"
   },
   {
-    "revision": "783523266b02f0e30449c4b0116050ed",
+    "revision": "1b13e4a4a4867e4ff01fc82ac5c982fb",
     "url": "/index.html"
   }
 ];
