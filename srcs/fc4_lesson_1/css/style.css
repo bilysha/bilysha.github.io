@@ -90,6 +90,8 @@ main form input[type="submit"]:hover {
 
 .articles-ul {
     width: 100%;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .articles-ul li{
@@ -139,6 +141,7 @@ main form input[type="submit"]:hover {
 }
 
 .article_footer .article_author {
+    text-align: left;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

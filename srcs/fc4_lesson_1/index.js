@@ -31,7 +31,53 @@ class App {
         this.fetchTopHeadlinesNews();
     }
 
+    findByQuery(e) {
+        e.preventDefault();
+
+        const query = document.getElementById(`search-input`).value;
+
+        if (query.length === 0) {
+            return;
+        }
+
+        this.loader.classList.remove(`hide`);
+
+        document.getElementById(`articles-ul`).innerHTML = ``;
+
+        fetch(`https://newsapi.org/v2/everything?language=en&q=${query}&sortBy=publishedAt&apiKey=${apiKey}`)
+            .then(res => res.json())
+            .then(res => this.setArticles(res.articles))
+            .then(() => this.loader.classList.add(`hide`));
+    }
+
+    findByCategoy(e) {
+        if (e.path[0].tagName === `LI`) {
+            this.activeCategory.classList.remove(`active`);
+            this.fetchTopHeadlinesNews(e.path[0].outerText);
+            this.activeCategory = e.path[0];
+            this.activeCategory.classList.add(`active`);
+        }
+    }
+
+    fetchTopHeadlinesNews(category = `business`) {
+        this.loader.classList.remove(`hide`);
+        
+        document.getElementById(`articles-ul`).innerHTML = ``;
+
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`)
+            .then(res => res.json())
+            .then(res => this.setArticles(res.articles))
+            .then(() => this.loader.classList.add(`hide`));
+    }
+
     setArticles(articles) {
+        articles.length > 0 ?
+            this.createArticles(articles)
+        :
+            document.getElementById(`articles-ul`).innerHTML = `Nothing found on your request :(`;
+    }
+    
+    createArticles(articles) {
         let fragment = document.createDocumentFragment();
 
         articles.map(article => {
@@ -79,41 +125,6 @@ class App {
         });
 
         document.getElementById(`articles-ul`).appendChild(fragment);
-    }
-
-    findByQuery(e) {
-        this.loader.classList.remove(`hide`);
-
-        e.preventDefault();
-
-        const query = document.getElementById(`search-input`).value;
-
-        document.getElementById(`articles-ul`).innerHTML = ``;
-
-        fetch(`https://newsapi.org/v2/everything?language=en&q=${query}&sortBy=publishedAt&apiKey=${apiKey}`)
-            .then(res => res.json())
-            .then(res => this.setArticles(res.articles))
-            .then(() => this.loader.classList.add(`hide`));
-    }
-
-    findByCategoy(e) {
-        if (e.path[0].tagName === `LI`) {
-            this.activeCategory.classList.remove(`active`);
-            this.fetchTopHeadlinesNews(e.path[0].outerText);
-            this.activeCategory = e.path[0];
-            this.activeCategory.classList.add(`active`);
-        }
-    }
-
-    fetchTopHeadlinesNews(category = `business`) {
-        this.loader.classList.remove(`hide`);
-        
-        document.getElementById(`articles-ul`).innerHTML = ``;
-
-        fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`)
-            .then(res => res.json())
-            .then(res => this.setArticles(res.articles))
-            .then(() => this.loader.classList.add(`hide`));
     }
 
     sliceContent(string) {
