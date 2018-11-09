@@ -90,7 +90,7 @@ class App {
 
         document.getElementById(`articles-ul`).innerHTML = ``;
 
-        fetch(`https://newsapi.org/v2/everything?language=en&q=${query}&from=2018-10-08&sortBy=publishedAt&apiKey=${apiKey}`)
+        fetch(`https://newsapi.org/v2/everything?language=en&q=${query}&sortBy=publishedAt&apiKey=${apiKey}`)
             .then(res => res.json())
             .then(res => this.setArticles(res.articles))
             .then(() => this.loader.classList.add(`hide`));
