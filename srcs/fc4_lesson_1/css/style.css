@@ -39,7 +39,20 @@ h1 span {
 
 main {
     flex: 1;
+}
+
+main .powered-by {
     padding: 20px;
+    background-color: rgb(89, 168, 218);
+    color: #fff;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+main .powered-by a {
+    color: #fff;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 main .form-container {
