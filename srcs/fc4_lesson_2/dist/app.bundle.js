@@ -3005,10 +3005,169 @@ if (!self.fetch) {
 /*!************************!*\
   !*** ./scripts/app.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\front-camp-4\\lesson_2\\scripts\\app.js: await is a reserved word (42:8)\n\n\u001b[0m \u001b[90m 40 | \u001b[39m        \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mfetchTopHeadlinesNews()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 41 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 | \u001b[39m        await assd()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 43 | \u001b[39m        console\u001b[33m.\u001b[39mlog(\u001b[32m'this.a'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 45 | \u001b[39m\u001b[0m\n    at Parser.raise (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:4028:15)\n    at Parser.checkReservedWord (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7170:12)\n    at Parser.parseIdentifierName (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7131:12)\n    at Parser.parseIdentifier (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7119:21)\n    at Parser.parseExprAtom (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:6310:25)\n    at Parser.parseExprSubscripts (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:6019:21)\n    at Parser.parseMaybeUnary (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:5998:21)\n    at Parser.parseExprOps (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:5907:21)\n    at Parser.parseMaybeConditional (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:5879:21)\n    at Parser.parseMaybeAssign (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:5826:21)\n    at Parser.parseExpression (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:5779:21)\n    at Parser.parseStatementContent (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7391:21)\n    at Parser.parseStatement (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7277:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7829:23)\n    at Parser.parseBlockBody (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7816:10)\n    at Parser.parseBlock (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7805:10)\n    at Parser.parseFunctionBody (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7042:24)\n    at Parser.parseFunctionBodyAndFinish (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7024:10)\n    at Parser.parseMethod (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:6966:10)\n    at Parser.pushClassMethod (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:8208:30)\n    at Parser.parseClassMemberWithIsStatic (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:8133:12)\n    at Parser.parseClassMember (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:8075:10)\n    at Parser.parseClassBody (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:8030:12)\n    at Parser.parseClass (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7980:10)\n    at Parser.parseExportDefaultExpression (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:8347:19)\n    at Parser.parseExport (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:8298:31)\n    at Parser.parseStatementContent (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7364:27)\n    at Parser.parseStatement (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7277:17)\n    at Parser.parseBlockOrModuleBlockBody (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7829:23)\n    at Parser.parseBlockBody (D:\\front-camp-4\\lesson_2\\node_modules\\@babel\\parser\\lib\\index.js:7816:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var apiKey = '24ad2a89476a467e8241042807458fd9';
+
+var createArticleElement = function createArticleElement(tag, className, content) {
+  var element = document.createElement(tag);
+  Array.isArray(className) ? className.map(function (name) {
+    return element.classList.add(name);
+  }) : element.classList.add("article_".concat(className));
+  element.innerHTML = content ? content : '';
+  return element;
+};
+
+var App =
+/*#__PURE__*/
+function () {
+  function App() {
+    _classCallCheck(this, App);
+
+    this.findByQuery = this.findByQuery.bind(this);
+    this.findByCategoy = this.findByCategoy.bind(this);
+    this.fetchTopHeadlinesNews = this.fetchTopHeadlinesNews.bind(this);
+    this.handleCollapseFilters = this.handleCollapseFilters.bind(this);
+    this.activeCategory = document.getElementById('categories-ul').children[0];
+    this.loader = document.getElementById('loader');
+    this.filtersContainer = document.getElementById('filters-content');
+    this.filterCollapsBtn = document.getElementById('collapse-filters');
+  }
+
+  _createClass(App, [{
+    key: "init",
+    value: function init() {
+      document.getElementById('search-btn').addEventListener('click', this.findByQuery);
+      document.getElementById('home').addEventListener('click', this.fetchTopHeadlingsNews);
+      document.getElementById('categories-ul').addEventListener('click', this.findByCategoy);
+      this.filterCollapsBtn.addEventListener('click', this.handleCollapseFilters);
+      this.fetchTopHeadlinesNews();
+    }
+  }, {
+    key: "handleCollapseFilters",
+    value: function handleCollapseFilters() {
+      if (this.filtersContainer.classList.contains('collapsed')) {
+        this.filtersContainer.classList.remove('collapsed');
+        this.filterCollapsBtn.classList.remove('collapsed');
+      } else {
+        this.filtersContainer.classList.add('collapsed');
+        this.filterCollapsBtn.classList.add('collapsed');
+      }
+    }
+  }, {
+    key: "findByQuery",
+    value: function findByQuery(e) {
+      var _this = this;
+
+      e.preventDefault();
+      var query = document.getElementById('search-input').value;
+
+      if (query.length === 0) {
+        return;
+      }
+
+      this.loader.classList.remove('hide');
+      document.getElementById('articles-ul').innerHTML = '';
+      fetch("https://newsapi.org/v2/everything?language=en&q=".concat(query, "&sortBy=publishedAt&apiKey=").concat(apiKey)).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        return _this.setArticles(res.articles);
+      }).then(function () {
+        return _this.loader.classList.add('hide');
+      });
+    }
+  }, {
+    key: "findByCategoy",
+    value: function findByCategoy(e) {
+      if (e.srcElement.nodeName === 'LI') {
+        this.activeCategory.classList.remove('active');
+        this.fetchTopHeadlinesNews(e.srcElement.innerHTML);
+        this.activeCategory = e.srcElement;
+        this.activeCategory.classList.add('active');
+      }
+    }
+  }, {
+    key: "fetchTopHeadlinesNews",
+    value: function fetchTopHeadlinesNews() {
+      var _this2 = this;
+
+      var category = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'business';
+      this.loader.classList.remove('hide');
+      document.getElementById('articles-ul').innerHTML = '';
+      fetch("https://newsapi.org/v2/top-headlines?country=us&category=".concat(category, "&apiKey=").concat(apiKey)).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        return _this2.setArticles(res.articles);
+      }).then(function () {
+        return _this2.loader.classList.add('hide');
+      });
+    }
+  }, {
+    key: "setArticles",
+    value: function setArticles(articles) {
+      articles.length > 0 ? this.createArticles(articles) : document.getElementById('articles-ul').innerHTML = 'Nothing found on your request :(';
+    }
+  }, {
+    key: "createArticles",
+    value: function createArticles(articles) {
+      var _this3 = this;
+
+      var fragment = document.createDocumentFragment();
+      articles.map(function (article) {
+        var title = article.title,
+            author = article.author,
+            content = article.content,
+            urlToImage = article.urlToImage,
+            url = article.url;
+        var articleUI = document.createElement('li'),
+            header = createArticleElement('h3', 'header'),
+            body = createArticleElement('article', 'body'),
+            footer = createArticleElement('div', 'footer'),
+            articleImg = createArticleElement('img', 'img'),
+            imgWrapper = createArticleElement('div', 'img-wrapper'),
+            articleSourceContent = createArticleElement('i', ['fa', 'fa-external-link']),
+            articleSource = createArticleElement('a', 'source'),
+            articleTitle = createArticleElement('p', 'title', title),
+            articleContent = createArticleElement('p', "content", content ? _this3.sliceContent(content) : "We don't have any information about this news. Try to open source <i class=\"fa fa-external-link\"></i> of this news."),
+            articleAuthor = createArticleElement('p', 'author', author ? author : 'Unknown author');
+        articleImg.src = urlToImage ? urlToImage : './images/no_image.png';
+        imgWrapper.appendChild(articleImg);
+        articleSource.href = url;
+        articleSource.target = 'blank';
+        articleSource.appendChild(articleSourceContent);
+        header.appendChild(articleTitle);
+        header.appendChild(articleSource);
+        body.appendChild(imgWrapper);
+        body.appendChild(articleContent);
+        footer.appendChild(articleAuthor);
+        articleUI.appendChild(header);
+        articleUI.appendChild(body);
+        articleUI.appendChild(footer);
+        fragment.appendChild(articleUI);
+      });
+      document.getElementById('articles-ul').appendChild(fragment);
+    }
+  }, {
+    key: "sliceContent",
+    value: function sliceContent(string) {
+      return string.slice(0, string.indexOf('[+'));
+    }
+  }]);
+
+  return App;
+}();
+
+
 
 /***/ }),
 
@@ -3025,13 +3184,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_fn_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/fn/promise */ "./node_modules/core-js/fn/promise.js");
 /* harmony import */ var core_js_fn_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_fn_promise__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app */ "./scripts/app.js");
-/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 
 var onLoad = function onLoad() {
-  var app = new _app__WEBPACK_IMPORTED_MODULE_2___default.a();
+  var app = new _app__WEBPACK_IMPORTED_MODULE_2__["default"]();
   app.init();
 };
 
