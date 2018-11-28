@@ -17,7 +17,7 @@
   transition: all 1s;
 }
 .form-container_header i.collapsed {
-  transform: rotate(180deg);
+  transform: rotateX(180deg);
 }
 .form-container_header i:hover {
   color: #EC4D31;
@@ -69,6 +69,12 @@ form input[type="submit"]:hover {
 .articles-ul li:not(:last-child) {
   margin-bottom: 20px;
 }
+.articles-ul li:hover {
+  box-shadow: 0 0 5px 0 #091B39;
+}
+.articles-ul .article_source {
+  color: #091B39;
+}
 .articles-ul .article_header {
   display: flex;
   justify-content: space-between;
@@ -81,12 +87,6 @@ form input[type="submit"]:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.articles-ul .article_source {
-  color: #091B39;
-}
-.articles-ul .article_source:hover {
-  color: #EC4D31;
 }
 .articles-ul .article_body {
   display: flex;
@@ -134,6 +134,7 @@ form input[type="submit"]:hover {
     width: 100%;
     border-right: 0;
     position: relative;
+    padding: 10px;
   }
   .form-container_header {
     display: flex;
@@ -160,6 +161,12 @@ form input[type="submit"]:hover {
   }
   .form-container ul {
     border: none;
+  }
+  .articles-ul {
+    padding: 10px;
+  }
+  .articles-ul li:not(:last-child) {
+    margin-bottom: 10px;
   }
   .main-content {
     width: 100%;
@@ -170,6 +177,7 @@ form input[type="submit"]:hover {
     width: 100%;
     border-right: 0;
     position: relative;
+    padding: 5px;
   }
   .form-container_header {
     display: flex;
@@ -180,34 +188,12 @@ form input[type="submit"]:hover {
     overflow: hidden;
   }
   .form-container article.collapsed {
-    max-height: 300px;
+    max-height: 410px;
   }
   .form-container article {
     display: flex;
-    border-right: none;
-  }
-  .form-container article div {
-    width: 50%;
-  }
-  .form-container article div:first-child {
-    padding-right: 10px;
-    border-right: 1px solid #eee;
-    margin-right: 10px;
-  }
-  .form-container ul {
-    border: none;
-  }
-  .main-content {
-    width: 100%;
-  }
-  .form-container {
-    padding: 5px;
-  }
-  .form-container article {
     flex-direction: column;
-  }
-  .form-container article.collapsed {
-    max-height: 410px;
+    border-right: none;
   }
   .form-container article div {
     width: 100%;
@@ -222,10 +208,14 @@ form input[type="submit"]:hover {
     padding-right: 0;
   }
   .form-container ul {
+    border: none;
     margin-bottom: 0;
   }
   .form-container form input[type="submit"] {
     margin-bottom: 0;
+  }
+  .main-content {
+    width: 100%;
   }
   .articles-ul {
     padding: 5px;
@@ -236,10 +226,9 @@ form input[type="submit"]:hover {
   .articles-ul .article_body {
     flex-direction: column;
   }
-  .article_img-wrapper {
-    margin: 0 auto;
+  .articles-ul .article_img-wrapper {
+    margin: 0 auto 20px auto;
     max-width: 100%;
-    margin-bottom: 20px;
     max-height: 300px;
   }
 }
