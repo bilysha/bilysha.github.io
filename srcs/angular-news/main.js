@@ -102,15 +102,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_news_newsline_newsline_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/news/newsline/newsline.component */ "./src/app/components/news/newsline/newsline.component.ts");
 /* harmony import */ var _components_news_newsline_details_newsline_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/news/newsline-details/newsline-details.component */ "./src/app/components/news/newsline-details/newsline-details.component.ts");
 /* harmony import */ var _components_user_user_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/user/user.component */ "./src/app/components/user/user.component.ts");
-/* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pipes/filter.pipe */ "./src/app/pipes/filter.pipe.ts");
-/* harmony import */ var _services_http_client_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/http-client.service */ "./src/app/services/http-client.service.ts");
-/* harmony import */ var _services_details_passing_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/details-passing.service */ "./src/app/services/details-passing.service.ts");
+/* harmony import */ var _components_news_user_newsline_user_newsline_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/news/user-newsline/user-newsline.component */ "./src/app/components/news/user-newsline/user-newsline.component.ts");
+/* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pipes/filter.pipe */ "./src/app/pipes/filter.pipe.ts");
+/* harmony import */ var _services_news_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/news.service */ "./src/app/services/news.service.ts");
+/* harmony import */ var _services_details_passing_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/details-passing.service */ "./src/app/services/details-passing.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -139,7 +143,8 @@ var AppModule = /** @class */ (function () {
                 _components_news_newsline_newsline_component__WEBPACK_IMPORTED_MODULE_9__["NewsLineComponent"],
                 _components_news_newsline_details_newsline_details_component__WEBPACK_IMPORTED_MODULE_10__["NewsLineDetailsComponent"],
                 _components_user_user_component__WEBPACK_IMPORTED_MODULE_11__["UserComponent"],
-                _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_12__["FilterNewsPipe"]
+                _components_news_user_newsline_user_newsline_component__WEBPACK_IMPORTED_MODULE_12__["UserNewsLineComponent"],
+                _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_13__["FilterNewsPipe"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -150,12 +155,14 @@ var AppModule = /** @class */ (function () {
                     { path: 'news/category/:category/page/:page', component: _components_news_news_component__WEBPACK_IMPORTED_MODULE_6__["NewsComponent"] },
                     { path: 'news/search/:query/page/:page', component: _components_news_news_component__WEBPACK_IMPORTED_MODULE_6__["NewsComponent"] },
                     { path: 'news/source/:source/page/:page', component: _components_news_news_component__WEBPACK_IMPORTED_MODULE_6__["NewsComponent"] },
+                    { path: 'news/create', component: _components_news_user_newsline_user_newsline_component__WEBPACK_IMPORTED_MODULE_12__["UserNewsLineComponent"] },
                     { path: '', pathMatch: 'full', redirectTo: 'news/source/abc-news/page/1' }
                 ])
             ],
             providers: [
-                _services_http_client_service__WEBPACK_IMPORTED_MODULE_13__["HttpRequestService"],
-                _services_details_passing_service__WEBPACK_IMPORTED_MODULE_14__["DetailsPassingService"]
+                _services_news_service__WEBPACK_IMPORTED_MODULE_14__["HttpRequestService"],
+                _services_details_passing_service__WEBPACK_IMPORTED_MODULE_15__["DetailsPassingService"],
+                _services_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
@@ -266,7 +273,7 @@ module.exports = ".news-content {\n  margin: 10px auto;\n  display: flex;\n}\n\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"news-content center\">\n  <article class=\"news-sources\">\n    <nav class=\"sources-list\" [ngClass]=\"{'minimize': !sourcesExpanded}\">\n      <p><span>Sources:</span><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\" (click)=\"sourcesExpanded = ! sourcesExpanded\" [ngClass]=\"{'expanded': sourcesExpanded}\"></i></p>\n      <a *ngFor=\"let source of sources\" [routerLink]=\"['/news/source', source.id, 'page', 1]\" routerLinkActive=\"active\">\n        {{source.name}}\n      </a>\n    </nav>\n    <nav class=\"categories-list\" [ngClass]=\"{'minimize': !categoriesExpanded}\">\n      <p>Categories: <i class=\"fa fa-angle-double-down\" aria-hidden=\"true\" (click)=\"categoriesExpanded = !categoriesExpanded\" [ngClass]=\"{'expanded': categoriesExpanded}\"></i></p>\n      <a *ngFor=\"let category of categories\" [routerLink]=\"['/news/category', category.id, 'page', 1]\" routerLinkActive=\"active\">\n        {{category.name}}\n      </a>\n    </nav>\n    <nav class=\"search-container\" [ngClass]=\"{'minimize': !searchExpanded}\">\n      <p>Search: <i class=\"fa fa-angle-double-down\" aria-hidden=\"true\" (click)=\"searchExpanded = !searchExpanded\" [ngClass]=\"{'expanded': searchExpanded}\"></i></p>\n      <label>\n        <input type=\"text\" [(ngModel)]=\"searchQuery\"/>\n      </label>\n      <button [routerLink]=\"['/news/search', searchQuery, 'page', 1]\">Search</button>\n    </nav>\n  </article>\n  <app-news-list [newsList]=\"newsList\" [activeSource]=\"source.name\"></app-news-list>\n</article>\n"
+module.exports = "<article class=\"news-content center\">\n  <article class=\"news-sources\">\n    <nav class=\"sources-list\" [ngClass]=\"{'minimize': !isSourcesExpanded}\">\n      <p><span>Sources:</span><i class=\"fa fa-angle-double-down\" aria-hidden=\"true\" (click)=\"isSourcesExpanded = ! isSourcesExpanded\" [ngClass]=\"{'expanded': isSourcesExpanded}\"></i></p>\n      <a *ngFor=\"let source of sources\" [routerLink]=\"['/news/source', source.id, 'page', 1]\" routerLinkActive=\"active\">\n        {{source.name}}\n      </a>\n    </nav>\n    <nav class=\"categories-list\" [ngClass]=\"{'minimize': !isCategoriesExpanded}\">\n      <p>Categories: <i class=\"fa fa-angle-double-down\" aria-hidden=\"true\" (click)=\"isCategoriesExpanded = !isCategoriesExpanded\" [ngClass]=\"{'expanded': isCategoriesExpanded}\"></i></p>\n      <a *ngFor=\"let category of categories\" [routerLink]=\"['/news/category', category.id, 'page', 1]\" routerLinkActive=\"active\">\n        {{category.name}}\n      </a>\n    </nav>\n    <nav class=\"search-container\" [ngClass]=\"{'minimize': !isSearchExpanded}\">\n      <p>Search: <i class=\"fa fa-angle-double-down\" aria-hidden=\"true\" (click)=\"isSearchExpanded = !isSearchExpanded\" [ngClass]=\"{'expanded': isSearchExpanded}\"></i></p>\n      <form (ngSubmit)=\"navigateToSearch()\">\n        <label>\n          <input type=\"text\" [(ngModel)]=\"searchQuery\" [ngModelOptions]=\"{standalone: true}\"/>\n        </label>\n        <button (click)=\"navigateToSearch()\">Search</button>\n      </form>\n    </nav>\n  </article>\n  <app-news-list [newsList]=\"newsList\" [activeSource]=\"source.name\"></app-news-list>\n</article>\n"
 
 /***/ }),
 
@@ -284,7 +291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_http_client_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/http-client.service */ "./src/app/services/http-client.service.ts");
+/* harmony import */ var _services_news_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/news.service */ "./src/app/services/news.service.ts");
 /* harmony import */ var _constants_sources_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../constants/sources.constants */ "./src/app/constants/sources.constants.js");
 /* harmony import */ var _constants_categories_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../constants/categories.constants */ "./src/app/constants/categories.constants.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -303,54 +310,55 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var NewsComponent = /** @class */ (function () {
-    function NewsComponent(httpClient, route) {
+    function NewsComponent(httpClient, activatedRoute, router) {
         this.httpClient = httpClient;
-        this.route = route;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
         this.categories = _constants_categories_constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORIES"];
         this.sources = _constants_sources_constants__WEBPACK_IMPORTED_MODULE_4__["SOURCES"];
         this.searchQuery = '';
-        this.searchExpanded = false;
-        this.sourcesExpanded = false;
-        this.categoriesExpanded = false;
+        this.isSearchExpanded = false;
+        this.isSourcesExpanded = false;
+        this.isCategoriesExpanded = false;
     }
     NewsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.subscriber = this.route.params.subscribe(function (params) {
+        this.subscriber = this.activatedRoute.params.subscribe(function (params) {
             _this.newsList = [];
             console.log('onInit');
             if (lodash__WEBPACK_IMPORTED_MODULE_2___default.a.find(_this.sources, { id: params['source'] })) {
-                _this.sourcesExpanded = true;
+                _this.isSourcesExpanded = true;
                 _this.source = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.find(_this.sources, { id: params['source'] });
                 _this.httpClient.getNewsBySource(_this.source.id)
-                    .then(function (result) {
+                    .subscribe(function (result) {
                     _this.newsList = result.json().articles;
                 });
             }
             if (lodash__WEBPACK_IMPORTED_MODULE_2___default.a.find(_this.categories, { id: params['category'] })) {
-                _this.categoriesExpanded = true;
+                _this.isCategoriesExpanded = true;
                 _this.source = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.find(_this.categories, { id: params['category'] });
                 _this.httpClient.getHeadlinesIn(_this.source.id)
-                    .then(function (result) {
-                    console.log(result.json());
+                    .subscribe(function (result) {
                     _this.newsList = result.json().articles;
                 });
             }
             if (params['query']) {
-                _this.searchExpanded = true;
+                _this.isSearchExpanded = true;
                 _this.source = { name: params['query'] };
                 _this.searchQuery = _this.source.name;
                 _this.httpClient.getNewsByQuery(_this.source.name)
-                    .then(function (result) {
+                    .subscribe(function (result) {
                     _this.newsList = result.json().articles;
                 });
             }
         });
     };
     NewsComponent.prototype.expandCollapseBlock = function (blockExpanded) {
-        console.log(blockExpanded);
         blockExpanded = !blockExpanded;
-        console.log(this.sourcesExpanded);
         return blockExpanded;
+    };
+    NewsComponent.prototype.navigateToSearch = function () {
+        this.router.navigate(['/news/search', this.searchQuery, 'page', 1]);
     };
     NewsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -358,8 +366,9 @@ var NewsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./news.component.html */ "./src/app/components/news/news.component.html"),
             styles: [__webpack_require__(/*! ./news.component.css */ "./src/app/components/news/news.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_http_client_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_services_news_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], NewsComponent);
     return NewsComponent;
 }());
@@ -499,6 +508,63 @@ var NewsLineComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/news/user-newsline/user-newsline.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/news/user-newsline/user-newsline.component.css ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".form-wrapper {\n  background-color: #fff;\n  box-shadow: 0 1px 3px #e3e3e3;\n  margin: 20px auto;\n  padding: 20px;\n}\n\n.form-wrapper .form-header .form-heading {\n  font-size: 28px;\n  font-weight: bold;\n  padding: 0 20px 20px 20px;\n  border-bottom: 5px solid #39c2d7;\n  margin-bottom: 20px;\n}\n\n.form-wrapper .form-content {\n  display: flex;\n  justify-content: space-between;\n}\n\n.form-wrapper .form-content .form-group {\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  font-size: 24px;\n  width: 50%;\n}\n\n.form-wrapper .form-content .form-group label input,\n.form-wrapper .form-content .form-group label textarea {\n  display: block;\n  margin: 10px 0 20px 0;\n  width: 100%;\n  padding: 5px;\n  font-size: 20px;\n}\n\n.form-wrapper .form-footer {\n  text-align: right;\n}\n\n.form-wrapper .form-footer button {\n  padding: 10px 20px;\n  min-width: 20%;\n  border: none;\n  color: #fff;\n  background-color: #39c2d7;\n  cursor: pointer;\n  margin: 0 20px;\n  font-size: 20px;\n  font-weight: bold;\n}\n\n.form-wrapper .form-footer button:hover {\n  background-color: #30a1b6;\n}\n\n@media all and (min-width: 230px) and (max-width: 651px) {\n  .form-wrapper {\n    padding: 20px 0;\n  }\n\n  .form-wrapper .form-content {\n    flex-direction: column;\n    font-size: 20px;\n  }\n\n  .form-wrapper .form-content .form-group {\n    width: 100%;\n  }\n\n  .form-wrapper .form-footer button {\n    min-width: 1%;\n    padding: 5px 10px;\n    font-size: 16px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uZXdzL3VzZXItbmV3c2xpbmUvdXNlci1uZXdzbGluZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usc0JBQXNCO0VBQ3RCLDZCQUE2QjtFQUM3QixpQkFBaUI7RUFDakIsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQix5QkFBeUI7RUFDekIsZ0NBQWdDO0VBQ2hDLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGFBQWE7RUFDYiw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLGFBQWE7RUFDYixlQUFlO0VBQ2YsVUFBVTtBQUNaOztBQUVBOztFQUVFLGNBQWM7RUFDZCxxQkFBcUI7RUFDckIsV0FBVztFQUNYLFlBQVk7RUFDWixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWM7RUFDZCxZQUFZO0VBQ1osV0FBVztFQUNYLHlCQUF5QjtFQUN6QixlQUFlO0VBQ2YsY0FBYztFQUNkLGVBQWU7RUFDZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRTtJQUNFLGVBQWU7RUFDakI7O0VBRUE7SUFDRSxzQkFBc0I7SUFDdEIsZUFBZTtFQUNqQjs7RUFFQTtJQUNFLFdBQVc7RUFDYjs7RUFFQTtJQUNFLGFBQWE7SUFDYixpQkFBaUI7SUFDakIsZUFBZTtFQUNqQjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uZXdzL3VzZXItbmV3c2xpbmUvdXNlci1uZXdzbGluZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0td3JhcHBlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gIGJveC1zaGFkb3c6IDAgMXB4IDNweCAjZTNlM2UzO1xuICBtYXJnaW46IDIwcHggYXV0bztcbiAgcGFkZGluZzogMjBweDtcbn1cblxuLmZvcm0td3JhcHBlciAuZm9ybS1oZWFkZXIgLmZvcm0taGVhZGluZyB7XG4gIGZvbnQtc2l6ZTogMjhweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIHBhZGRpbmc6IDAgMjBweCAyMHB4IDIwcHg7XG4gIGJvcmRlci1ib3R0b206IDVweCBzb2xpZCAjMzljMmQ3O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuXG4uZm9ybS13cmFwcGVyIC5mb3JtLWNvbnRlbnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG5cbi5mb3JtLXdyYXBwZXIgLmZvcm0tY29udGVudCAuZm9ybS1ncm91cCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIHBhZGRpbmc6IDIwcHg7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgd2lkdGg6IDUwJTtcbn1cblxuLmZvcm0td3JhcHBlciAuZm9ybS1jb250ZW50IC5mb3JtLWdyb3VwIGxhYmVsIGlucHV0LFxuLmZvcm0td3JhcHBlciAuZm9ybS1jb250ZW50IC5mb3JtLWdyb3VwIGxhYmVsIHRleHRhcmVhIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMTBweCAwIDIwcHggMDtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDVweDtcbiAgZm9udC1zaXplOiAyMHB4O1xufVxuXG4uZm9ybS13cmFwcGVyIC5mb3JtLWZvb3RlciB7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xufVxuXG4uZm9ybS13cmFwcGVyIC5mb3JtLWZvb3RlciBidXR0b24ge1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG4gIG1pbi13aWR0aDogMjAlO1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiAjZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzljMmQ3O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIG1hcmdpbjogMCAyMHB4O1xuICBmb250LXNpemU6IDIwcHg7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4uZm9ybS13cmFwcGVyIC5mb3JtLWZvb3RlciBidXR0b246aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzBhMWI2O1xufVxuXG5AbWVkaWEgYWxsIGFuZCAobWluLXdpZHRoOiAyMzBweCkgYW5kIChtYXgtd2lkdGg6IDY1MXB4KSB7XG4gIC5mb3JtLXdyYXBwZXIge1xuICAgIHBhZGRpbmc6IDIwcHggMDtcbiAgfVxuXG4gIC5mb3JtLXdyYXBwZXIgLmZvcm0tY29udGVudCB7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gIH1cblxuICAuZm9ybS13cmFwcGVyIC5mb3JtLWNvbnRlbnQgLmZvcm0tZ3JvdXAge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG5cbiAgLmZvcm0td3JhcHBlciAuZm9ybS1mb290ZXIgYnV0dG9uIHtcbiAgICBtaW4td2lkdGg6IDElO1xuICAgIHBhZGRpbmc6IDVweCAxMHB4O1xuICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgfVxufVxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/components/news/user-newsline/user-newsline.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/news/user-newsline/user-newsline.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<article class=\"form-wrapper center\">\n  <form>\n    <div class=\"form-header\">\n      <p class=\"form-heading\">Create Article</p>\n    </div>\n    <div class=\"form-content\">\n      <div class=\"form-group\">\n        <label>\n          Title:\n          <input type=\"text\"/>\n        </label>\n        <label>\n          Short description:\n          <input type=\"text\"/>\n        </label>\n        <label>\n          Content:\n          <textarea rows=\"5\"></textarea>\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label>\n          URL to image:\n          <input type=\"text\"/>\n        </label>\n        <label>\n          Date:\n          <input type=\"text\"/>\n        </label>\n        <label>\n          Author:\n          <input type=\"text\"/>\n        </label>\n        <label>\n          Source URL:\n          <input type=\"text\"/>\n        </label>\n      </div>\n    </div>\n    <div class=\"form-footer\">\n      <button type=\"submit\">Save</button>\n      <button>Cancel</button>\n    </div>\n  </form>\n</article>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/news/user-newsline/user-newsline.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/components/news/user-newsline/user-newsline.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: UserNewsLineComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserNewsLineComponent", function() { return UserNewsLineComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var UserNewsLineComponent = /** @class */ (function () {
+    function UserNewsLineComponent() {
+    }
+    UserNewsLineComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-user-newsline',
+            template: __webpack_require__(/*! ./user-newsline.component.html */ "./src/app/components/news/user-newsline/user-newsline.component.html"),
+            styles: [__webpack_require__(/*! ./user-newsline.component.css */ "./src/app/components/news/user-newsline/user-newsline.component.css")]
+        })
+    ], UserNewsLineComponent);
+    return UserNewsLineComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/paginator/paginator.component.css":
 /*!**************************************************************!*\
   !*** ./src/app/components/paginator/paginator.component.css ***!
@@ -577,7 +643,7 @@ var PaginatorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".user-container {\n  background-color: #fff;\n  border-bottom: 5px solid #39c2d7;\n}\n\n.user-container .center {\n  padding: 20px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyL3VzZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFzQjtFQUN0QixnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxhQUFhO0FBQ2YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3VzZXIvdXNlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnVzZXItY29udGFpbmVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgYm9yZGVyLWJvdHRvbTogNXB4IHNvbGlkICMzOWMyZDc7XG59XG5cbi51c2VyLWNvbnRhaW5lciAuY2VudGVyIHtcbiAgcGFkZGluZzogMjBweDtcbn1cbiJdfQ== */"
+module.exports = ".user-container {\n  background-color: #fff;\n  border-bottom: 5px solid #39c2d7;\n}\n\n.user-container .center {\n  padding: 20px;\n  display: flex;\n  justify-content: space-between;\n  position: relative;\n}\n\n.user-group {\n  font-size: 20px;\n  align-self: center;\n}\n\n.user-group button {\n  border: none;\n  color: #fff;\n  background-color: #39c2d7;\n  font-weight: bold;\n  padding: 10px 20px;\n  font-size: 18px;\n  cursor: pointer;\n}\n\n.user-group button:hover {\n  background-color: #30a1b6;\n}\n\n.user-group label {\n  cursor: pointer;\n}\n\n.user-group i {\n  cursor: pointer;\n  font-size: 24px;\n}\n\n.user-group form {\n  position: absolute;\n  right: 0;\n  padding: 20px;\n  display: none;\n  flex-direction: column;\n  background-color: #fff;\n  box-shadow: 0 1px 3px #39c2d7;\n  z-index: 10;\n}\n\n.user-group form.expanded {\n  display: flex;\n}\n\n.user-group form label {\n  display: flex;\n  flex-direction: column;\n}\n\n.user-group form input {\n  padding: 5px;\n}\n\n.user-group form label:first-child {\n  margin-bottom: 20px;\n}\n\n.user-group form button {\n  margin-top: 20px;\n  background-color: #a3c644;\n}\n\n.user-group form button:hover {\n  color: #fff;\n  background-color: #86a532;\n}\n\n@media all and (min-width: 230px) and (max-width: 651px) {\n  .user-container .center {\n    flex-direction: column-reverse;\n  }\n\n  .user-group {\n    margin: 10px 0;\n  }\n\n  .user-group:last-child {\n    align-self: flex-end;\n  }\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy91c2VyL3VzZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFzQjtFQUN0QixnQ0FBZ0M7QUFDbEM7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsYUFBYTtFQUNiLDhCQUE4QjtFQUM5QixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLFdBQVc7RUFDWCx5QkFBeUI7RUFDekIsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsYUFBYTtFQUNiLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsc0JBQXNCO0VBQ3RCLDZCQUE2QjtFQUM3QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCx5QkFBeUI7QUFDM0I7O0FBRUE7RUFDRTtJQUNFLDhCQUE4QjtFQUNoQzs7RUFFQTtJQUNFLGNBQWM7RUFDaEI7O0VBRUE7SUFDRSxvQkFBb0I7RUFDdEI7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci91c2VyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudXNlci1jb250YWluZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3JkZXItYm90dG9tOiA1cHggc29saWQgIzM5YzJkNztcbn1cblxuLnVzZXItY29udGFpbmVyIC5jZW50ZXIge1xuICBwYWRkaW5nOiAyMHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLnVzZXItZ3JvdXAge1xuICBmb250LXNpemU6IDIwcHg7XG4gIGFsaWduLXNlbGY6IGNlbnRlcjtcbn1cblxuLnVzZXItZ3JvdXAgYnV0dG9uIHtcbiAgYm9yZGVyOiBub25lO1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzM5YzJkNztcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIHBhZGRpbmc6IDEwcHggMjBweDtcbiAgZm9udC1zaXplOiAxOHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi51c2VyLWdyb3VwIGJ1dHRvbjpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMzMGExYjY7XG59XG5cbi51c2VyLWdyb3VwIGxhYmVsIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4udXNlci1ncm91cCBpIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBmb250LXNpemU6IDI0cHg7XG59XG5cbi51c2VyLWdyb3VwIGZvcm0ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHJpZ2h0OiAwO1xuICBwYWRkaW5nOiAyMHB4O1xuICBkaXNwbGF5OiBub25lO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICBib3gtc2hhZG93OiAwIDFweCAzcHggIzM5YzJkNztcbiAgei1pbmRleDogMTA7XG59XG5cbi51c2VyLWdyb3VwIGZvcm0uZXhwYW5kZWQge1xuICBkaXNwbGF5OiBmbGV4O1xufVxuXG4udXNlci1ncm91cCBmb3JtIGxhYmVsIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cblxuLnVzZXItZ3JvdXAgZm9ybSBpbnB1dCB7XG4gIHBhZGRpbmc6IDVweDtcbn1cblxuLnVzZXItZ3JvdXAgZm9ybSBsYWJlbDpmaXJzdC1jaGlsZCB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi51c2VyLWdyb3VwIGZvcm0gYnV0dG9uIHtcbiAgbWFyZ2luLXRvcDogMjBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2EzYzY0NDtcbn1cblxuLnVzZXItZ3JvdXAgZm9ybSBidXR0b246aG92ZXIge1xuICBjb2xvcjogI2ZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzg2YTUzMjtcbn1cblxuQG1lZGlhIGFsbCBhbmQgKG1pbi13aWR0aDogMjMwcHgpIGFuZCAobWF4LXdpZHRoOiA2NTFweCkge1xuICAudXNlci1jb250YWluZXIgLmNlbnRlciB7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbi1yZXZlcnNlO1xuICB9XG5cbiAgLnVzZXItZ3JvdXAge1xuICAgIG1hcmdpbjogMTBweCAwO1xuICB9XG5cbiAgLnVzZXItZ3JvdXA6bGFzdC1jaGlsZCB7XG4gICAgYWxpZ24tc2VsZjogZmxleC1lbmQ7XG4gIH1cbn1cblxuIl19 */"
 
 /***/ }),
 
@@ -588,7 +654,7 @@ module.exports = ".user-container {\n  background-color: #fff;\n  border-bottom:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"user-container\">\n  <div class=\"center\">\n    <p>CurrentUser</p>\n  </div>\n</article>\n"
+module.exports = "<article class=\"user-container\">\n  <div class=\"center\">\n    <div class=\"user-group\">\n      <button *ngIf=\"user\" [routerLink]=\"['/news/create']\">Create New Article</button>\n    </div>\n    <div class=\"user-group\">\n      <label *ngIf=\"user\">\n        <input type=\"checkbox\" />\n        Show only my articles\n      </label>\n    </div>\n    <div class=\"user-group\">\n      <i class=\"fa fa-user\" aria-hidden=\"true\" (click)=\"isFormExpanded = !isFormExpanded\"> {{user ? user.username : ''}}</i>\n      <form [ngClass]=\"{'expanded': isFormExpanded}\" (ngSubmit)=\"userLogin()\">\n        <label>\n          Username\n          <input type=\"text\" [(ngModel)]=\"username\" [ngModelOptions]=\"{standalone: true}\" />\n        </label>\n        <label>\n          Password\n          <input type=\"password\" [(ngModel)]=\"password\" [ngModelOptions]=\"{standalone: true}\" />\n        </label>\n        <button type=\"submit\">Log In</button>\n      </form>\n    </div>\n  </div>\n</article>\n"
 
 /***/ }),
 
@@ -603,22 +669,41 @@ module.exports = "<article class=\"user-container\">\n  <div class=\"center\">\n
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserComponent", function() { return UserComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var UserComponent = /** @class */ (function () {
-    function UserComponent() {
+    function UserComponent(userService) {
+        this.userService = userService;
+        this.isFormExpanded = false;
+        this.username = '';
+        this.password = '';
     }
+    UserComponent.prototype.userLogin = function () {
+        var user = this.userService.logIn(this.username, this.password);
+        if (user) {
+            this.isFormExpanded = false;
+            this.username = '';
+            this.password = '';
+            this.user = user;
+        }
+    };
     UserComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-user',
             template: __webpack_require__(/*! ./user.component.html */ "./src/app/components/user/user.component.html"),
             styles: [__webpack_require__(/*! ./user.component.css */ "./src/app/components/user/user.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], UserComponent);
     return UserComponent;
 }());
@@ -825,10 +910,10 @@ var DetailsPassingService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/services/http-client.service.ts":
-/*!*************************************************!*\
-  !*** ./src/app/services/http-client.service.ts ***!
-  \*************************************************/
+/***/ "./src/app/services/news.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/news.service.ts ***!
+  \******************************************/
 /*! exports provided: HttpRequestService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -855,22 +940,81 @@ var HttpRequestService = /** @class */ (function () {
         this.http = http;
     }
     HttpRequestService.prototype.getHeadlinesIn = function (category) {
-        return this.http.get(_constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["URL"] + "/top-headlines?country=us&category=" + category + "&apiKey=" + _constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["API_KEY"])
-            .toPromise();
+        return this.http.get(_constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["URL"] + "/top-headlines?country=us&category=" + category + "&apiKey=" + _constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["API_KEY"]);
     };
     HttpRequestService.prototype.getNewsBySource = function (source) {
-        return this.http.get(_constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["URL"] + "/top-headlines?sources=" + source + "&apiKey=" + _constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["API_KEY"])
-            .toPromise();
+        return this.http.get(_constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["URL"] + "/top-headlines?sources=" + source + "&apiKey=" + _constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["API_KEY"]);
     };
     HttpRequestService.prototype.getNewsByQuery = function (query) {
-        return this.http.get(_constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["URL"] + "/top-headlines?q=" + query + "&apiKey=" + _constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["API_KEY"])
-            .toPromise();
+        return this.http.get(_constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["URL"] + "/top-headlines?q=" + query + "&apiKey=" + _constants_http_constants__WEBPACK_IMPORTED_MODULE_2__["API_KEY"]);
     };
     HttpRequestService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
     ], HttpRequestService);
     return HttpRequestService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UserService = /** @class */ (function () {
+    function UserService(http) {
+        this.http = http;
+        this.registeredUsers = [
+            {
+                username: 'root',
+                password: 'root'
+            }
+        ];
+    }
+    Object.defineProperty(UserService.prototype, "user", {
+        get: function () {
+            return this.activeUser;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    UserService.prototype.logIn = function (username, password) {
+        var user = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.find(this.registeredUsers, { username: username });
+        if (user && user.password === password) {
+            this.activeUser = user;
+            return user;
+        }
+        return null;
+    };
+    UserService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
+    ], UserService);
+    return UserService;
 }());
 
 
