@@ -5,6 +5,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'playfair';
+  src: url('./../assets/fonts/PlayfairDisplay-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nunito';
+  src: url('./../assets/fonts/Nunito-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*font awesome*/
 @font-face {
   font-family: 'FontAwesome';

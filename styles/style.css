@@ -1,6 +1,10 @@
 body {
   background-color: #eee;
-  font-family: 'acme', sans-serif;
+  font-family: 'nunito';
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .center {
@@ -8,13 +12,17 @@ body {
   margin: 0 auto;
 }
 
-header {
+header, footer {
   padding: 20px;
   background-color: #4d4d4d;
+  color: #fff;
+}
+
+footer .center {
+  text-align: right;
 }
 
 header p {
-  color: #c2d7ea;
   font-size: 24px;
 }
 
@@ -60,11 +68,12 @@ aside figcaption{
   font-size: 18px;
 }
 
-aside figcaption span{
+aside figcaption .position {
   display: block;
   font-size: 14px;
   color: #8db5d8;
   margin-top: 10px;
+  font-weight: normal;
 }
 
 aside article.contacts-container {
@@ -111,6 +120,7 @@ aside article.contacts-container ul li:hover a {
 main {
   flex-grow: 15;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 main section {
@@ -156,6 +166,14 @@ main a:hover {
     flex-direction: column;
   }
 
+  .center {
+    padding: 0;
+  }
+
+  aside, main {
+    border-radius: 0;
+  }
+
   aside {
     margin: 0;
     flex-grow: 0;
@@ -165,5 +183,11 @@ main a:hover {
   main {
     flex-grow: 0;
     margin-top: 20px;
+    padding: 20px 10px;
+  }
+
+  main section {
+    padding: 20px 10px 0 10px;
+    margin: 20px 10px 30px 10px;
   }
 }
